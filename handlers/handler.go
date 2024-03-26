@@ -7,20 +7,20 @@ import (
 )
 
 func Index(w http.ResponseWriter, r *http.Request) {
-	tpl, err := template.ParseFiles("templates/index.html")
+	tpl, err := template.ParseFiles("templates/base.html","templates/index.html")
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
 	}
 
-	data := struct {
-		Title   string
-		Message string
-	}{
-		"Pagina de inicio",
-		"Bienvenido a Piedra, Papel o Tijera!",
-	}
-	err = tpl.Execute(w, data)
+	// data := struct {
+	// 	Title   string
+	// 	Message string
+	// }{
+	// 	"Pagina de inicio",
+	// 	"Bienvenido a Piedra, Papel o Tijera!",
+	// }
+	err = tpl.ExecuteTemplate(w, "base", nil)
 	if err != nil {
 		http.Error(w, err.Error(), http.StatusInternalServerError)
 		return
