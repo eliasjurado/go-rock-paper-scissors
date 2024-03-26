@@ -3,10 +3,20 @@ package handlers
 import (
 	"fmt"
 	"net/http"
+	"text/template"
 )
 
 func Index(w http.ResponseWriter, r *http.Request) {
-	fmt.Fprintln(w, "Página de Inicio")
+	tpl, err := template.ParseFiles("templates/index.html")
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
+	err = tpl.Execute(w, "templates/index.html")
+	if err != nil {
+		http.Error(w, err.Error(), http.StatusInternalServerError)
+		return
+	}
 }
 
 func NewGame(w http.ResponseWriter, r *http.Request) {
