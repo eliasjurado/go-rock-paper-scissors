@@ -15,6 +15,6 @@ func main() {
 	router.HandleFunc("/about", handlers.About)
 
 	port := ":8080"
-	fmt.Printf("Servidor escuchando en http://localhost%s", port)
+	fmt.Printf("Servidor escuchando en http://localhost%s\n", port)
 	http.ListenAndServe(port, router)
 }
