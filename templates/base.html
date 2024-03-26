@@ -11,13 +11,21 @@
 <body>
 
     <header>
-        <h2>Encabezado</h2>
+        <div>
+            <a href="/">RPS</a>
+        </div>
+        <nav>
+            <a href="/new">Nuevo</a>
+            <a href="/game">Game</a>
+            <a href="/play">Jugar</a>
+            <a href="/about">About</a>
+        </nav>
     </header>
 
     {{ template "content" . }}
 
     <footer>
-        <p>Creador por Elias Jurado &copy; 2024</p>
+        <p>Creado por Elias Jurado &copy; 2024</p>
     </footer>
 
 </body>
