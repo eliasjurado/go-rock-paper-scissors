@@ -20,3 +20,7 @@ header nav a {
   header nav a :hover{
     color: #1d8348;
   }
+
+footer{
+  padding: 2%;
+}

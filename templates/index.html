@@ -2,8 +2,25 @@
 
 {{ define "title" }} RPS web - Inicio {{ end }}
 
-{{ define "content" }} 
+{{ define "content" }}
 
-<h1>Bienvenido a Piedra, Papel o Tijera!</h1>
 
+<section class="container py-5">
+    <h1 class="display-4 fw-bold py-3 texr-center">Bienvenido a Piedra, Papel o Tijera</h1>
+    <div class="row">
+        <div class="col-md-4">
+            <img src="../static/img/hand_rock.png" alt="rock_icon" class="img-fluid">
+        </div>
+        <div class="col-md-4">
+            <img src="../static/img/paper_icon.png" alt="rock_icon" class="img-fluid">
+        </div>
+        <div class="col-md-4">
+            <img src="../static/img/scissors_icon.png" alt="rock_icon" class="img-fluid">
+        </div>
+    </div>
+    <p class="lead text-center fs-2 py-4">Juega contra la computadora</p>
+    <p class="text-center">
+        <a href="/new" class="btn btn-success btn-lg">Nuevo Juego</a>
+    </p>
+</section>
 {{ end }}
